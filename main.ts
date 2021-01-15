@@ -7,7 +7,7 @@ bluetooth.onBluetoothDisconnected(function () {
     basic.pause(1000)
 })
 bluetooth.onUartDataReceived(serial.delimiters(Delimiters.SemiColon), function () {
-    commande = bluetooth.uartReadUntil(serial.delimiters(Delimiters.NewLine))
+    commande = bluetooth.uartReadUntil(serial.delimiters(Delimiters.SemiColon))
     if (commande == "Avant gauche") {
         robotbit.MotorRunDelay(robotbit.Motors.M1A, 255, 0.1)
     } else if (commande == "Avant droit") {

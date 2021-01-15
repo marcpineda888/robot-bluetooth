@@ -8,13 +8,13 @@ bluetooth.onBluetoothDisconnected(function () {
 })
 bluetooth.onUartDataReceived(serial.delimiters(Delimiters.SemiColon), function () {
     commande = bluetooth.uartReadUntil(serial.delimiters(Delimiters.SemiColon))
-    if (commande == "Avant gauche;") {
+    if (commande == "Avant gauche") {
         robotbit.MotorRunDelay(robotbit.Motors.M1A, 255, 0.1)
-    } else if (commande == "Avant droit;") {
+    } else if (commande == "Avant droit") {
         robotbit.MotorRunDelay(robotbit.Motors.M1B, 255, 0.1)
-    } else if (commande == "Arrière gauche;") {
+    } else if (commande == "Arrière gauche") {
         robotbit.MotorRunDelay(robotbit.Motors.M2A, 255, 0.1)
-    } else if (commande == "Arrière droit;") {
+    } else if (commande == "Arrière droit") {
         robotbit.MotorRunDelay(robotbit.Motors.M2B, 255, 0.1)
     }
 })
